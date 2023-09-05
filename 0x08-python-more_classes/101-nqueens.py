@@ -1,13 +1,9 @@
 #!/usr/bin/python3
 """Solves the N-queens puzzle.
 
-Deger greater than or equal to 4.
-
-Attributes:
-    board (list): A list of lists representing the chessboard.
-    solutions (list): A list of lists containing solutions.
-
-
+Determines all possible solutions to placing N
+N non-attacking queens on an NxN chessboard.
+queen must be placed on the chessboard.
 """
 import sys
 

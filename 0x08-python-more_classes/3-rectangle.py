@@ -1,8 +1,10 @@
-!/usr/bin/python3
+#!/usr/bin/python3
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-    """
+    """Represent a rectangle.
+
     Attributes:
         width (int): The width of the rectangle.
         height (int): The height of the rectangle.
@@ -10,6 +12,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
+
+        Args:
             width (int): The width of the new rectangle.
             height (int): The height of the new rectangle.
         """
@@ -25,9 +29,13 @@ class Rectangle:
     def width(self, value):
         """Set the width of the Rectangle.
 
+        Args:
+            value (int): The new width of the Rectangle.
+
         Raises:
             TypeError: If value is not an integer.
-         """
+            ValueError: If value is less than 0.
+        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -45,6 +53,10 @@ class Rectangle:
 
         Args:
             value (int): The new height of the Rectangle.
+
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -59,6 +71,8 @@ class Rectangle:
     def perimeter(self):
         """Return the perimeter of the Rectangle.
 
+        If either the width or height is equal to 0, the perimeter is 0.
+
         Returns:
             int: The perimeter of the Rectangle.
         """
@@ -67,7 +81,14 @@ class Rectangle:
         return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
-               if self.__width == 0 or self.__height == 0:
+        """Return the printable representation of the Rectangle.
+
+        Represents the rectangle with the # character.
+
+        Returns:
+            str: The printable representation of the Rectangle.
+        """
+        if self.__width == 0 or self.__height == 0:
             return ("")
 
         rect = []

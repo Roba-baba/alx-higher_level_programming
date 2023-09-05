@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module containing the Rectangle class"""
 
 
 class Rectangle:
@@ -6,6 +7,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle instance
+
+        Args:
             width (int): The width of the rectangle
             height (int): The height of the rectangle
         """
@@ -20,6 +23,9 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """Set the width of the rectangle
+
+        Args:
+            value (int): The new width value
 
         Raises:
             TypeError: If the value is not an integer
@@ -39,7 +45,13 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """Set the height of the rectangle
-           ValueError: If the value is less than 0
+
+        Args:
+            value (int): The new height value
+
+        Raises:
+            TypeError: If the value is not an integer
+            ValueError: If the value is less than 0
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -58,6 +70,7 @@ class Rectangle:
         return (self.__width + self.__height) * 2
 
     def __str__(self):
+        """Return a string representation of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return ''
         rect = ''
@@ -69,7 +82,9 @@ class Rectangle:
         return rect
 
     def __repr__(self):
-       return "Rectangle({}, {})".format(self.__width, self.__height)
+        """Return a string representation of the rectangle"""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
+        """Print a message when a Rectangle instance is deleted"""
         print("Bye rectangle...")

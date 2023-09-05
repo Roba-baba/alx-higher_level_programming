@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Definse a class"""
 
 
 class Rectangle:
@@ -14,6 +15,7 @@ class Rectangle:
         Rectangle.number_of_instances += 1
 
     def __del__(self):
+        """Print a message when the instance of Rectangle is deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
@@ -67,7 +69,11 @@ class Rectangle:
             return "\n".join([symbol * self.width] * self.height)
 
     def __repr__(self):
-               return f
+        """
+        Return a string representation of the rectangle that
+        can be used to recreate a new instance
+        """
+        return f"Rectangle({self.width}, {self.height})"
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):

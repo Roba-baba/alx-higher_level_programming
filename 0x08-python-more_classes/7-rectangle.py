@@ -1,7 +1,12 @@
-!/usr/bin/python3
+#!/usr/bin/python3
+"""Defines a class """
 
 
 class Rectangle:
+    """
+    Rectangle class with width, height,
+    area, perimeter and print_symbol attributes
+    """
 
     number_of_instances = 0
     print_symbol = "#"
@@ -19,7 +24,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Set method for width"""
+        """Setter method for width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -54,6 +59,10 @@ class Rectangle:
             return 2 * (self.width + self.height)
 
     def __str__(self):
+        """
+        Return a string representation
+        of the rectangle
+        """
         if self.width == 0 or self.height == 0:
             return ""
         else:
